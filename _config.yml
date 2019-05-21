@@ -32,7 +32,7 @@ paginate_path: "/page:num/"
   #paginate_path: "/page:num/"
 
 # Handling Reading
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "README_en.md"]
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "README_en.md", "vendor"]
 
 # Separator
 #excerpt_separator: <!-- more -->
@@ -40,6 +40,8 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "
 # Code Highlighter
 ## 'pygments' is unsupported on GitHub Pages now.
 highlighter: rouge
+highlight:
+  line_number: true
 
 #### Markdown Processors
 ## 'redcarpet' is unsupported on GitHub Pages now.
@@ -65,8 +67,7 @@ feed:
 # Plugins
 ## Docs: https://help.github.com/articles/configuring-jekyll-plugins/
 plugins:
-# jemoji conficts with toc in some no-ascii post
-# - jemoji
+ - jemoji
  - jekyll-sitemap
  - jekyll-feed
 
@@ -83,7 +84,7 @@ keywords: "Jekyll, NexT"
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss: false
+rss:
 
 # Specify the date when the site was setup
 since: 2017
@@ -118,9 +119,9 @@ index_with_subtitle: false
 menu:
   home: /
   #categories: /categories/
+  #about: /about/
   archives: /archives/
   tags: /tags/
-  #about: /about/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -214,7 +215,7 @@ font:
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
   #LinkLabel: Link
-  GitHub: https://github.com/Scelta 
+  GitHub: https://github.com/Scelta
 
 
 # Social Links Icons
@@ -241,10 +242,10 @@ toc:
   enable: true
 
   # Automatically add list number to toc.
-  number: false
+  number: true
 
   # If true, all words will placed on next lines if header width longer then sidebar width.
-  wrap: true
+  wrap: false
 
 
 # Creative Commons 4.0 International License.
@@ -373,7 +374,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: f7b7e8d46fbded51cd4ce57554fa0655
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -386,6 +387,32 @@ disqus:
   # hide comments (visitors need to click to load the comments)
   # count need to be false when hide is true
   hide: false
+
+# <wildfire>
+wildfire:
+  enable: false
+  # version - It's recommended to use the following versions.
+  loaderVersion: 1.2.5 # https://www.npmjs.com/package/wildfire-comment
+  useDev: true
+  version: 0.5.6
+  # database config
+  databaseProvider: firebase # or wilddog
+  firebase: # your firebase config goes here ↓
+    apiKey:
+    authDomain:
+    databaseURL:
+    projectId:
+    storageBucket:
+    messagingSenderId:
+  wilddog: # your wilddog config goes here ↓
+    siteId:
+  # other configs
+  theme: light # or dark
+  locale: en # or other locales, e.g. zh-CN
+  defaultAvatarURL:
+# Any question?
+# Raise an issue here: https://github.com/cheng-kang/wildfire/issues
+# </wildfire>
 
 # Hypercomments
 #hypercomments_id:
@@ -406,6 +433,15 @@ changyan:
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
 #livere_uid: your uid
+
+# Support for gitalk comments system.
+gitalk:
+  enable: false
+  clientID: # 54730ddf7b9420460c03
+  clientSecret: # c05684701b25ff1c19ea0c01ce4d80c125e0707d
+  repo: # colingpt.github.io
+  owner: # colingpt
+  admin: # colingpt
 
 # Baidu Share
 # Available value:
