@@ -31,5 +31,5 @@ key: page-home
 Here is a list my notes from what I read and learnt. "Gain new insights through reviewing old material".
 
 # Topics
-- [工欲善其事，必先利其器 / Every artist was first an amateur](/archive.html?tag=skills)
+- [工欲善其事，必先利其器 / Every artist was first an amateur](/archive.html?tag=tech)
 - [漫游统计世界 / Tours in statistic world](/archive.html?tag=statistics)
