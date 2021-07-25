@@ -133,7 +133,7 @@ comments:
     owner       : Scelta # GitHub repo owner
     admin: Scelta # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
       # - your GitHub Id
-    proxy: https://biochao-gitalk.herokuapp.com
+    proxy: https://biochao-gitalk.herokuapp.com/https://github.com/login/oauth/access_token
 
   ## Valine
   # please refer to https://valine.js.org/en/ for more info.
