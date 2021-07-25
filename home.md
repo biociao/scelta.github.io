@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: page
 titles:
   # @start locale config
   en      : &EN       Welcome
@@ -23,7 +23,6 @@ titles:
   fr-FR   : *FR
   fr-LU   : *FR
   # @end locale config
-key: page-home
 ---
 
 这里是我所整理的一些笔记。时时温故而知新。
