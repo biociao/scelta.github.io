@@ -3,7 +3,8 @@
 	site.comments.gitalk.clientSecret and
 	site.comments.gitalk.repository and
 	site.comments.gitalk.owner and
-	site.comments.gitalk.admin -%}
+	site.comments.gitalk.admin and
+  site.comments.gitalk.proxy -%}
 
 	<!-- fix text color in the input textarea of gitalk -->
 	<style type="text/css">
@@ -17,10 +18,12 @@
 	<div class="gitalk-wrapper" id="js-gitalk-container"></div>
 	{%- assign _admin = '' -%}
 	{%- for _admin_id in site.comments.gitalk.admin -%}
-		{%- assign _admin = _admin | append: ", '" | append: _admin_id | append: "'" -%}
+	{%- assign _admin = _admin | append: ", '" | append: _admin_id | append: "'" -%}
 	{%- endfor -%}
 	{%- assign _last = _admin | size | minus: 1 -%}
-	{%- assign _admin = _admin | slice: 2, _last -%}
+  {%- assign _admin = _admin | slice: 2, _last -%}
+  {%- assign _proxy = _proxy | slice: 2, _last -%}
+
 	<script>
 		window.Lazyload.css('{{ _sources.gitalk.css }}');
 		window.Lazyload.js('{{ _sources.gitalk.js }}', function() {
@@ -30,7 +33,8 @@
 				repo: '{{ site.comments.gitalk.repository }}',
 				owner: '{{ site.comments.gitalk.owner }}',
 				admin: [{{ _admin }}],
-				id: '{{ page.key }}'
+				id: '{{ page.key }}',
+        proxy: '{{ site.comments.gitalk.proxy }}'
 			});
 			gitalk.render('js-gitalk-container');
 		});
