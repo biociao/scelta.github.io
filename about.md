@@ -1,5 +1,5 @@
 ---
-layout: none
+layout: page
 titles:
   # @start locale config
   en      : &EN       About
