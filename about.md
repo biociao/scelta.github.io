@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: none
 titles:
   # @start locale config
   en      : &EN       About
