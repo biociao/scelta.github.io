@@ -121,10 +121,15 @@ proxy: https://biochao-gitalk.herokuapp.com/https://github.com/login/oauth/acces
 对于直接用我这个地址的同学可以将后半段https的地址改为你的域名进行测试。
 
 2. 在`_includes/comments-providers/gitalk.html`中如下位置添加一行，但其实我并不懂这些语法，只是改了变量名而已。
+
+{% raw %}
 ```
-  {%- assign _admin = _admin | slice: 2, _last -%}
-  {%- assign _proxy = _proxy | slice: 2, _last -%}  #紧跟着增加这行
+  {% assign _admin = _admin | slice: 2, _last %}
+  {% assign _proxy = _proxy | slice: 2, _last %}  #紧跟着增加这行
 ```
+{% endraw %}
+> If this chunk somehow disappeared, ref: [http://shopify.github.io/liquid/tags/template/](http://shopify.github.io/liquid/tags/template/)
+
 在相同文件的后续段落中继续添加一行：
 ```
 				admin: [{{ _admin }}],
